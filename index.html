@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Mini CodePen — HTML / CSS / JS Live Editor (Dark)</title>
+
+<!-- Ace Editor -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.14/ace.js"></script>
+
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+<div class="logo">
+  <h1>Mini CodePen</h1>
+  <p>Live HTML / CSS / JS playground</p>
+</div>
+
+<div class="topbar">
+  <div class="controls">
+    <button id="runBtn" class="btn primary" title="Run code (Ctrl+Enter)">Run</button>
+    <button id="clearBtn" class="btn" title="Clear editors">Clear</button>
+    <button id="downloadBtn" class="btn" title="Download assembled HTML">Download</button>
+    <label class="tog small"><input id="autoRun" type="checkbox" /> Auto-run</label>
+    <span class="badge" id="statusBadge">Ready</span>
+  </div>
+</div>
+</header>
+
+<main class="wrap">
+<section class="editors">
+  <div class="editor-row">
+    <div class="pane" style="flex:1.2">
+      <div class="title"><div class="label"><span>HTML</span></div><div class="label"><span class="badge">&lt; / &gt;</span></div></div>
+      <div id="htmlEditor" class="ace_editor"></div>
+    </div>
+
+    <div class="pane">
+      <div class="title"><div class="label"><span>CSS</span></div><div class="label"><span class="badge">.css</span></div></div>
+      <div id="cssEditor" class="ace_editor"></div>
+    </div>
+  </div>
+
+  <div class="editor-row" style="height:40%">
+    <div class="pane" style="height:100%">
+      <div class="title"><div class="label"><span>JavaScript</span></div><div class="label"><span class="badge">.js</span></div></div>
+      <div id="jsEditor" class="ace_editor"></div>
+    </div>
+  </div>
+
+  <div class="footer small">
+    <div>Tip: Use <strong>Ctrl/Cmd + Enter</strong> to run. Auto-run updates preview as you type.</div>
+    <div>Theme: Dark • Minimal</div>
+  </div>
+</section>
+
+<aside class="pane preview">
+  <div class="title"><div class="label"><span>Preview</span></div><div class="label"><span class="badge" id="previewSize">iframe</span></div></div>
+  <iframe id="preview" sandbox="allow-scripts allow-modals allow-forms"></iframe>
+</aside>
+</main>
+
+<script src="script.jss"></script>
+</body>
+</html>
